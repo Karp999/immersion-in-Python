@@ -3,3 +3,22 @@
 # Используйте правило для проверки: “Число является простым, если делится нацело только на единицу и на себя”. 
 # Сделайте ограничение на ввод отрицательных чисел и чисел больше 100 тысяч. 
 
+print('') #пробелы для красоты вывода
+user_number = int(input('Введите число от 1 до 100000: '))
+print('') 
+MAX_NUMB = 100000
+MIN_NUMB = 1
+count = 0
+
+if MIN_NUMB <= user_number <= MAX_NUMB:
+    for i in range(1, user_number + 1):
+        if user_number % i == 0:
+            count += 1
+    if count == 2:
+        print('Число ', user_number, ' - простое.')
+    else:
+        print('Число ', user_number,' - составное.')
+else:
+    print('Необходимо ввести число от 1 до 100000!')
+
+print('') 
