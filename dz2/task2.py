@@ -11,24 +11,24 @@ print('')
 num_1 = int(input("Введите числитель первой дроби: ")) 
 denom_1 = int(input("Введите знаменатель первой дроби: "))
 print('')
-num2 = int(input("Введите числитель второй дроби: "))
+num_2 = int(input("Введите числитель второй дроби: "))
 denom_2 = int(input("Введите знаменатель второй дроби: "))
 print('')
 
 if denom_1 == denom_2:
-    common_num = num_1 + num2 # сумма числителей
+    common_num = num_1 + num_2 # сумма числителей
     common_denom = denom_1 # сумма знаменателей, если они равны
 else:
-    common_num = (num_1 * denom_2) + (num2 * denom_1) 
+    common_num = (num_1 * denom_2) + (num_2 * denom_1) 
     # домножение на противоположные знаменатели, если они разные и сумма получившихся числителей
     common_denom = denom_1 * denom_2 # приводим к одному знаменателю, чтоб сложить дроби
 
 print(f'Сумма дробей:  {common_num}/{common_denom}')
-print(f'Произведение дробей:  {num_1 * num2}/{denom_1 * denom_2}')
+print(f'Произведение дробей:  {num_1 * num_2}/{denom_1 * denom_2}')
 print('')
 
 fraction_1 = fractions.Fraction(num_1, denom_1)
-fraction_2 = fractions.Fraction(num2, denom_2)
+fraction_2 = fractions.Fraction(num_2, denom_2)
 print('')
 
 res_1 = fraction_1 + fraction_2
