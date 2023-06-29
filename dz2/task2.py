@@ -3,34 +3,36 @@
 # Программа должна возвращать сумму и произведение* дробей. 
 # Для проверки своего кода используйте модуль fractions.
 
-NUM_A = 10
-NUM_B = 11
-NUM_C = 12
-NUM_D = 13
-NUM_E = 14
-NUM_F = 15
-NUM_SYSTEM = 16
+import fractions
+# "числитель" - numerator буду сокращать как "num"
+# "знаменатель" - denominator буду сокращать как "denom"
 
-user_num = int(input('Введите целове число: '))
-res = ''
-print(hex(user_num))
+print('')
+num_1 = int(input("Введите числитель первой дроби: ")) 
+denom_1 = int(input("Введите знаменатель первой дроби: "))
+print('')
+num2 = int(input("Введите числитель второй дроби: "))
+denom_2 = int(input("Введите знаменатель второй дроби: "))
+print('')
 
-while user_num > 0:
-    dev = user_num % NUM_SYSTEM
-    if dev == NUM_A:
-        res += str('A')
-    elif dev == NUM_B:
-        res += str('B')
-    elif dev == NUM_C:
-        res += str('C')
-    elif dev == NUM_D:
-        res += str('D')
-    elif dev == NUM_E:
-        res += str('E')
-    elif dev == NUM_F:
-        res += str('F')
-    else:
-        res += str(dev)
-    user_num //= NUM_SYSTEM
+if denom_1 == denom_2:
+    common_num = num_1 + num2 # сумма числителей
+    common_denom = denom_1 # сумма знаменателей, если они равны
+else:
+    common_num = (num_1 * denom_2) + (num2 * denom_1) 
+    # домножение на противоположные знаменатели, если они разные и сумма получившихся числителей
+    common_denom = denom_1 * denom_2 # приводим к одному знаменателю, чтоб сложить дроби
 
-print(res[::-1])
+print(f'Сумма дробей:  {common_num}/{common_denom}')
+print(f'Произведение дробей:  {num_1 * num2}/{denom_1 * denom_2}')
+print('')
+
+fraction_1 = fractions.Fraction(num_1, denom_1)
+fraction_2 = fractions.Fraction(num2, denom_2)
+print('')
+
+res_1 = fraction_1 + fraction_2
+res_2 = fraction_1 * fraction_2
+
+print(f'Проверка по модулю fractions: сумма = {res_1}, произведение = {res_2}')
+print('')
