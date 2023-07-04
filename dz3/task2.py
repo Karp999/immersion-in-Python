@@ -31,3 +31,17 @@ text_for_analysis = 'Переменная — это математически�
     '(переменная) в уравнении, значение которой требуется найти. В физике по переменной подразумевается'\
     'математический объект, способный изменять своё значение, физическая величина.'
 
+print('')
+text_for_analysis = "".join([i for i in text_for_analysis.lower() if i.isalpha() or i == " "])
+text_for_analysis = text_for_analysis.split()
+
+MAX_REPEAT = 10
+dictText = dict()
+
+for i in text_for_analysis:
+    dictText[i] = dictText.get(i, 0) + 1
+
+sorting = sorted(dictText.items(), key=lambda x: (-x[1], x[0]))[:MAX_REPEAT]
+for word, count in sorting:
+    print(f"'{word}' встречается {count} раз")
+print('')
