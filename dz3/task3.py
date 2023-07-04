@@ -4,29 +4,17 @@
 # Достаточно вернуть один допустимый вариант. 
 # *Верните все возможные варианты комплектации рюкзака. 
 
-'''В большой текстовой строке подсчитать количество встречаемых слов и 
-вернуть 10 самых частых. Не учитывать знаки препинания и регистр символов. 
-За основу возьмите любую статью из википедии или из документации к языку.'''
+camping_dict = {'компас': 0.2, 'палатка': 7, 'спички': 0.2, \
+                'еда': 3.5, 'посуда': 4, 'напитки': 3.5, 'одежда': 3,\
+                'книга': 0.3, 'топор': 4}
+max_weight = 15
+bag_content = {}
 
-text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\
- tempor incididunt ut labore et dolore magna aliqua. Lorem dolor sed viverra\
- ipsum nunc aliquet bibendum enim. Eget arcu dictum varius duis at consectetur.\
- Mauris ultrices eros in cursus turpis massa. Viverra maecenas accumsan lacus\
- vel facilisis volutpat est. In fermentum et sollicitudin ac orci phasellus\
- egestas tellus rutrum. Malesuada fames ac turpis egestas sed. Vitae sapien\
- pellentesque habitant morbi tristique senectus et netus. Mi quis hendrerit dolor\
-    magna. Lorem mollis aliquam ut porttitor leo a. A iaculis at erat pellentesque\
-    adipiscing. Et netus et malesuada fames ac turpis. Nunc sed blandit libero volutpat\
-    sed. Tortor posuere ac ut consequat semper viverra nam libero justo.'
+for key, value in camping_dict.items():
+    if max_weight - value >= 0:
+        bag_content[key] = value
+        max_weight = max_weight - value
 
-text = "".join([i for i in text.lower() if i.isalpha() or i == " "])
-text = text.split()
-
-n = 10
-dictText = dict()
-for i in text:
-    dictText[i] = dictText.get(i, 0) + 1
-# сортировка по количеству и по алфавиту
-sortWord = sorted(dictText.items(), key=lambda x: (-x[1], x[0]))[:n]
-for word, count in sortWord:
-    print(f"Слово {word} встречается {count} раз")
+print('')
+print(f'Сумка содержит: {bag_content}.')
+print('')
