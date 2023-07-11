@@ -10,5 +10,5 @@ def Fibonacci_nums(n: int) -> list[int]:
 print()
 print('Числа Фибоначчи: ')
 print()
-print(*(Fibonacci_nums(20)))
+print(*(Fibonacci_nums(50)))
 print()
