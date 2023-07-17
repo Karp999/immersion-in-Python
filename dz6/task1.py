@@ -10,7 +10,7 @@ class Date_checking:
         year_from_input = int(user_input[-4:])
         print()
         try:
-            time.strptime(user_input, '%D.%M.%Y')
+            time.strptime(user_input, '%d.%m.%Y')
             self.year_validation(year_from_input)
             return True
         except ValueError:
