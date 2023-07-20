@@ -21,7 +21,7 @@ def renameFiles(nameOfFile:str, count:int, extOld:str, extNew:str):
             number +=1
             oldName = 'dz7/'+name[0]+'.'+extOld
             z = pathlib.Path(oldName)
-            newName = 'dz/'+nameOfFile+ numNum(number, count) + '.' +extNew
+            newName = 'dz7/'+nameOfFile+ numNum(number, count) + '.' +extNew
             n = pathlib.Path(newName)
             z.rename(n)
 
