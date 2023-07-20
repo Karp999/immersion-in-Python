@@ -22,3 +22,4 @@ if __name__ == '__main__':
     print('Введите имя файла: ')
     file = input('-> ')
     file_with_nums(number_lines, file)
+    
