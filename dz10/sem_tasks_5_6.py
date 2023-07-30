@@ -53,11 +53,13 @@ class Mammals(Animals):
 
 
 if __name__ == '__main__':
-    bear = Mammals(False, 'Медведь', True)
+    print()
+    bear = Mammals(True, 'Медведь', True)
     print(f'Название: {bear.name}, хвост: {bear.tail}, спячка: {bear.specific()}')
-
+    print()
     duck = Birds(73, 'Утка', True)
     print(f'Название: {duck.name}, хвост: {duck.tail}, длина крыла: {duck.specific()}')
-
+    print()
     pike = Fish(4, 'Щука', True)
     print(f'Название: {pike.name}, хвост: {pike.tail}, глубина обитания: {pike.specific()}')
+    print()
