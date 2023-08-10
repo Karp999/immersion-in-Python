@@ -12,8 +12,6 @@ from collections import namedtuple
 import argparse
 import logging
 
-
-
 LOG_FORMAT = '{levelname:<3} - {asctime}. ' \
          '{msg}'
 
@@ -37,7 +35,7 @@ def logging():
         for elem in dir_name:
             data.append(FileOrDirectory(name=elem, flag_directory=True,
                                         parent=str(dir_path)))
-    logging.basicConfig(format=LOG_FORMAT, style='{', filename='log.json', filemode='a', encoding='utf-8',
+    logging.basicConfig(format=LOG_FORMAT, style='%', filename='logger.log', filemode='w', encoding='utf-8',
                         level=logging.INFO)
     logger = logging.getLogger()
     for item in data:
